@@ -1,0 +1,143 @@
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(3px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Apple Chancery, cursive;
+    color: rgba(0, 0, 0, 0.88);
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* For Safari */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;  
+    margin: 20px;
+    text-align: center;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.text{
+    text-align: left;
+}
+.next {
+    font-family: Apple Chancery, cursive;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0; 
+    font-size: 16px;
+    align-items: right;
+   text-decoration: none;
+}
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+.assinatura {
+    text-align: end;
+    margin-right: 2%;
+}
+.container-menu {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;  
+    margin: 20px;
+    text-align: auto;
+    width: 80%;
+    max-width: 800px;
+    height: 100%;
+}
+.div-foto {
+    
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    float: left;
+}
+
+.fotos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Espaço entre as colunas/linhas */
+    border-radius: 3px;
+    
+   
+    width: 100%;
+}
+
+.foto {
+    width: 45%;
+    margin-bottom: 6px;
+    border-radius: 15px;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Adicionado para posicionar o texto sobre a imagem */
+}
+.foto:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    background-color: aliceblue;
+}
+
+.foto.ativo {
+    background-image: none !important;
+    background-color: #1a1a1a;
+}
+
+.foto.ativo .foto-texto {
+    display: block;
+}
+
+.foto .foto-texto {
+    display: none;
+    position: absolute;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.foto.mostrar-texto .foto-texto {
+    display: block;
+}

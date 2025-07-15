@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linha do Tempo - Para minha Pitica</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* Linha do tempo simples */
+    .timeline-container {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 20px;
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 4px 8px rgba(0,0,0,0.12);
+    }
+    .timeline-title {
+        text-align: center;
+        font-family: Apple Chancery, cursive;
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: #2196f3; /* azul bonito */
+    }
+    .timeline {
+        position: relative;
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 3px solid #2196f3; /* azul bonito */
+    }
+    .event {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .event::before {
+        content: '';
+        position: absolute;
+        left: -29px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background: #2196f3; /* azul bonito */
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #2196f3; /* azul bonito */
+    }
+    .event-date {
+        font-weight: bold;
+        color: #1565c0; /* azul escuro */
+        font-family: Apple Chancery, cursive;
+    }
+    .event-desc {
+        margin-top: 5px;
+        font-size: 1.1em;
+        color: #0d47a1; /* azul ainda mais escuro */
+        font-family: Apple Chancery, cursive;
+    }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="timeline-container">
+        <div class="timeline-title">Linha do Tempo do Nosso Amor</div>
+        <div class="timeline">
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">05/05/2024</div>
+                <div class="event-desc">Nossa primeira conversa 💕</div>
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">13/07/2024</div>
+                <div class="event-desc">Primeiro encontro 🤗</div>
+                <img class="event-foto" src="img/maos dadas.jpg" alt="Primeiro encontro" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">13/07/2024</div>
+                <div class="event-desc">Primeira foto juntos 📸</div>
+                <img class="event-foto" src="img/primeirafoto.jpg" alt="Primeira foto juntos" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">10/09/2023</div>
+                <div class="event-desc">Pedido de Namoro 💕</div>
+                <img class="event-foto" src="img/lingua.jpg" alt="Pedido de Namoro" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">25/12/2023</div>
+                <div class="event-desc">ENEM juntinhos</div>
+                <img class="event-foto" src="img/enem.jpg" alt="ENEM juntinhos" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">06/02/2025</div>
+                <div class="event-desc">Formatura do Domdom</div>
+                <img class="event-foto" src="img/formatura.jpg" alt="Formatura do Domdom" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">30/04/2025</div>
+                <div class="event-desc">Café café</div>
+                <img class="event-foto" src="img/cafe.jpg" alt="Café café" style="display:none;max-width:100%;border-radius:12px;margin-top:10px;">
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">Hoje</div>
+                <div class="event-desc">Te amo cada dia mais! 🌹</div>
+            </div>
+            <div class="event">
+                <div class="event-date" onclick="toggleFoto(this)">CONTINUA...</div>
+            </div>
+        </div>
+        <button class="next"><a href="pag1.html">Voltar, Pitica❤️</a></button>
+    </div>
+    <script>
+    function toggleFoto(dateElem) {
+        // Fecha todas as fotos
+        document.querySelectorAll('.event-foto').forEach(function(img) {
+            img.style.display = 'none';
+        });
+        // Alterna a foto do evento clicado
+        var foto = dateElem.parentElement.querySelector('.event-foto');
+        if (foto) {
+            foto.style.display = foto.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    </script>
+</body>
+</html>
